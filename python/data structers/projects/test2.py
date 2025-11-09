@@ -4,8 +4,10 @@
 def display_board(luach):
     for i in range(3):
         for y in range(3):
-            print("|",luach[i][y], end="|")
-        print("")
+            print("|",luach[y][i], "|", end = "")
+        print ("")
+        if i < 2:
+            print ( "----------------")
     return luach
 
 def player_input(c, luach):
@@ -28,80 +30,27 @@ def player_input(c, luach):
             else:
                 print("its full")
         except ValueError:
-            print("Please enter a valid number.")
+            print("Please enter only numbers")
 
 def check_winner(l):
-    winner = False
-    if l[0][0] == l[1][1] == l[2][2]:
-        winner = True
-        if l[0][0] == "o":
-            print("o winn")
-            return winner
-        elif l[0][0] == "x":
-            print("x winn")
-            return winner
+    for i in range(3):
+        if l[i][0] == l[i][1] == l[i][2] != " ":
+            print(f" '{l[i][0]}' winn")
+            return True
 
-    if l[0][1] == l[1][1] == l[2][1]:
-        winner = True
-        if l[0][1] == "o":
-            print("o winn")
-            return winner
-        elif l[0][1] == "x":
-            print("x winn")
-            return winner
+    for i in range(3):
+        if l[0][i] == l[1][i] == l[2][i] != " ":
+            print(f" '{l[0][i]}' winn")
+            return True
 
-    if l[0][2] == l[1][1] == l[2][0]:
-        winner = True
-        if l[0][2] == "o":
-            print("o winn")
-            return winner
-        elif l[0][2] == "x":
-            print("x winn")
-            return winner
+    if l[0][0] == l[1][1] == l[2][2] != " ":
+        print(f"  '{l[0][0]}' winn")
+        return True
+    if l[0][2] == l[1][1] == l[2][0] != " ":
+        print(f" '{l[0][2]}' winn")
+        return True
 
-    if l[1][0] == l[1][1] == l[1][2]:
-        winner = True
-        if l[1][0] == "o":
-            print("o winn")
-            return winner
-        elif l[1][0] == "x":
-            print("x winn")
-            return winner
-
-    if l[2][0] == l[2][1] == l[2][2]:
-        winner = True
-        if l[2][0] == "o":
-            print("o winn")
-            return winner
-        elif l[2][0] == "x":
-            print("x winn")
-            return winner
-
-    if l[0][0] == l[1][0] == l[2][0]:
-        winner = True
-        if l[0][0] == "o":
-            print("o winn")
-            return winner
-        elif l[0][0] == "x":
-            print("x winn")
-            return winner
-
-    if l[0][2] == l[1][2] == l[2][2]:
-        winner = True
-        if l[0][2] == "o":
-            print("o winn")
-            return winner
-        elif l[0][2] == "x":
-            print("x winn")
-            return winner
-    if l[0][0] == l[0][1] == l[0][2]:
-      winner = True
-      if l[0][0] == "o":
-        print("o winn")
-        return winner
-      elif l[0][0] == "x":
-        print("x winn")
-        return winner
+    return False
 
 
 def chek_full(luach):
