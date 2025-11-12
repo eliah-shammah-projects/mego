@@ -57,9 +57,52 @@ def gameover(coins: list[int]) -> bool:
     return False
 
 def make_move(coins: list[int], player: int) -> None:
-     return 
+
+    coin = int(input("enter the coin number"))
+    stap = int(input("enter the number of staps that you want to do"))
+    index = coins[coin-1]
+    new_index = index - stap
+    while new_index < 0:
+        coin = int(input("enter the coin number"))
+        stap = int(input("enter the number of staps that you want to do"))
+        index = coins[coin-1]
+        new_index = index - stap
     
+    while new_index <= coins[coin - 2] and coin != 1:
+        coin = int(input("enter the coin number"))
+        stap = int(input("enter the number of staps that you want to do"))
+        index = coins[coin-1]
+        new_index = index - stap
     
+    coins[coin - 1] = new_index
+              
+         
+def print_game_summary(winner: int) -> None:
+     
+     print ("Game end!", winner, "win!!!")
+
+
+def  draw_line(length: int) -> None:
+    print("-" * length)
+
+
+
+def main():
+    player_num = 1
+    coins = []
+    print_welcome_message ()
+    cellnum = get_cellnum()
+    coins = place_coins(cellnum)
+    draw_board (coins, cellnum)
+    draw_line(cellnum * 3)
+
+    while not gameover (coins):
+         make_move (coins, player_num)
+         draw_board (coins, cellnum)
+         draw_line(cellnum * 3)
+         player_num = 3 - player_num
+
+    print_game_summary(3 - player_num)
             
     
     
