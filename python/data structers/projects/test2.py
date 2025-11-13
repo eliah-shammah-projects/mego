@@ -1,4 +1,29 @@
 
+import tkinter as tk 
+
+
+def print_on_window (luach):
+
+
+    window = tk.Tk()
+    window.title("result")
+    window.geometry("200x200")
+    window.configure (bg = "lightblue")
+
+
+    for i in range(3):
+        window.columnconfigure(i, weight=1)
+        window.rowconfigure(i, weight=1)
+
+    for i in range (3):
+        for  y in range (3):
+
+            cel = tk. Label (window, text = luach[i][y], font = ("Arial", 20), fg = "blue", bg = "lightblue", borderwidth=2, relief="sunken" )
+            cel.grid (row = i, column = y )
+            
+    window.after(10000, window.destroy)
+
+    window.mainloop()
 
 
 def display_board(luach):
@@ -60,6 +85,14 @@ def chek_full(luach):
                 return False
     return True
 
+def print_txt(luach):
+    with open("resultado.txt", "a") as f:
+        for i in range(3):
+            f.write("|".join(luach[i]) + "\n")
+            if i < 2:
+                f.write("_" * 5 + "\n")
+       
+
 def play_game(l):
     full = chek_full(l)
     if full:
@@ -80,6 +113,8 @@ def play_game(l):
         display_board(l)
         if winner:
             check_winner(l)
+            print_txt(l)
+
             break
 
         full = chek_full(l)
@@ -92,7 +127,10 @@ def play_game(l):
         display_board(l)
         if winner:
             check_winner(l)
+            print_txt(l)
+
             break
 
 luach = [[" " for i in range(3)] for y in range(3)]
 play_game(luach)
+print_on_window (luach)
