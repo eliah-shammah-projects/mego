@@ -1,6 +1,15 @@
 
 import tkinter as tk 
 
+def check_all_full(luach):
+    flag = True 
+    for i in range (3):
+        for y in range (3):
+            if luach [i][y] == " ":
+                flag = False
+                return flag
+    return flag 
+
 
 
 def check_winner(l):
@@ -33,12 +42,20 @@ def game (  i, j, luach):
               l = tk.Label(window, text = letter, font = ("arial", 26), bg = "#FFCCCC", fg = "red")
               l.grid(row = i, column = j)
               luach[i][j] = letter
+
               v = check_winner(luach)
 
               if v[0]:
                 l2 = tk.Label(window, text = f"{v[1]} winn!!!" , font =("arial", 20))
                 l2.grid(row=3, column=0, columnspan=3)
                 window.after(3000, window.destroy)
+
+              t = check_all_full(luach)
+              if t:
+                  l2 = tk.Label(window, text = "It's a draw" , font =("arial", 20))
+                  l2.grid(row=3, column=0, columnspan=3)
+                  window.after(3000, window.destroy)
+
 
               if letter == "o":
                  letter = "x"
