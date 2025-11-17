@@ -2,9 +2,19 @@
 
 import tkinter as tk
 
+letter = "o"
+
 def fun ( i, j):
-    l = tk.Label(window, text = "o", font = ("arial", 26), bg = "#FFCCCC", fg = "red")
-    l.grid(row = i, column = j)  
+    global letter
+    l = tk.Label(window, text = letter, font = ("arial", 26), bg = "#FFCCCC", fg = "red")
+    l.grid(row = i, column = j)
+
+    if letter == "o":
+        letter = "x"
+    else:
+        letter = "o"
+
+      
 
 window = tk.Tk()
 window.geometry("300x300")
