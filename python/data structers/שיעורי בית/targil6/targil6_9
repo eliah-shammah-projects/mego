@@ -1,0 +1,15 @@
+
+
+def count_rectangle(mat):
+    count = 0
+    for i in range (1, len(mat) - 1):
+            
+            for j in range (1, len(mat) - 1):
+                  
+                  if mat[i][j] and not mat[i - 1][j] and  not mat[i][j - 1]:
+                        count += 1
+            
+    return count 
+      
+
+                  

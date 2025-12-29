@@ -1,0 +1,10 @@
+
+
+def is_symmetric(mat):
+    
+    for i in range (len(mat)):
+
+        for j in range (i + 1, len(mat)):
+            if mat[i][j] != mat[j][i]:
+                return False
+    return True

@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    border: solid black 2px;
+    border-radius: 30%;
+}
+
+.box:nth-child(even){
+    background-color: rgb(234, 120, 234);
+    
+}
+.box:nth-child(odd){
+    background-color: rgb(168, 156, 156);
+
+}
+#magic {
+    border: solid red 6px;
+    background-color: transparent;
+    position: fixed;
+    top: 40px;
+    left: 80px;
+}
+

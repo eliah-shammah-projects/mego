@@ -1,0 +1,38 @@
+
+p {
+    color: blue;
+
+}
+
+#second {
+
+    color: gold;
+}
+
+#third {
+
+    font-size: 1.2em;
+}
+
+.ps {
+    color: green;
+    font-style: italic;
+}
+
+p:last-child{
+    background-color: pink
+}
+
+p:nth-child(odd) {
+    text-decoration: underline;
+}
+
+div p { 
+
+    margin: 30px;
+}
+
+p:hover {
+    background: orangered
+}
+

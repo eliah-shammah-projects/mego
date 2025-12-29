@@ -1,0 +1,13 @@
+
+
+def is_zero(mat):
+
+    for i in range (len(mat)):
+        for j in range (len(mat)):
+
+            if mat[i][j] != 0:
+                return False
+    return True
+
+
+

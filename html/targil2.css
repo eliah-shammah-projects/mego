@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.general div:hover {
+    background-color: yellow;
+}
+
+.general div:active{
+    background-color: orange;
+}
+.c1 {
+    border: black solid 5px;
+    background-color: blue ;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+}
+.c2 {
+    border: black solid 5px;
+    background-color: green ;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+}
+.c3 {
+    border: black solid 5px;
+    background-color: red ;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+
+}

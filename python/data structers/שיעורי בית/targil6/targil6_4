@@ -1,0 +1,12 @@
+
+def is_upper_triangular(mat):
+      
+      for i in range (len(mat) - 1, 0, -1):
+            for j in range (i):
+                  if mat[i][j] != 0:
+                        return False
+      return True
+
+
+            
+            

@@ -1,0 +1,31 @@
+
+*{
+    box-sizing: border-box;
+}
+* {
+    font-size: 1.2em;
+}
+
+
+.colored {
+    background-color: lightsalmon;
+}
+
+p .colored {
+    font-weight: bold;
+}
+#sp1 {
+    display: block;
+ }
+
+ #p3 {
+    display: inline;
+ }
+
+#last_span{
+    background-color: rgb(155, 197, 71);
+}
+ button {
+    width: 200px;
+    display: inline-block;
+ }

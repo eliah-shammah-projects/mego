@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    background-color: blueviolet;
+    width: 400px;
+}
+
+#box {
+    background-color: rgb(237, 205, 147);
+    color: rgb(234, 79, 18);
+    font-size: 1.6em;
+    font-weight: bold;
+    height: 200px;
+    border: solid rgb(195, 21, 21)  3px;
+
+}
+
+#bix {
+    background-color: rgb(115, 166, 180);
+    margin: 30px auto;
+    padding: 10px;
+    padding-left: 60px;
+    border-style: dashed double;
+    border-color: yellowgreen blueviolet;
+    border-width: 8px;
+}
+
+
+
+
+

@@ -1,0 +1,38 @@
+
+
+def neighbor_sum_matrix(matrix):
+    l1 = len(matrix)
+    l2 = len(matrix[0])
+    new = [[0 for _ in range (len(l2))]  for _ in range (l1)]
+
+    for i in range (l1):
+         for j in range (l2):
+            suma = 0
+            if i > 0:
+                suma += matrix[i-1][j]
+            if i < l1-1:
+                suma += matrix[i+1][j]
+            if j > 0:
+                suma += matrix[i][j-1]
+            if j < l2-1:
+                suma += matrix[i][j+1]
+            if i > 0 and j > 0:
+                suma += matrix[i-1][j-1]
+            if i > 0 and j < l2-1:
+                suma += matrix[i-1][j+1]
+            if i < l1-1 and j > 0:
+                suma += matrix[i+1][j-1]
+            if i < l1-1 and j < l2-1:
+                suma += matrix[i+1][j+1]
+
+
+            new [i][j] = suma
+
+    return new
+        
+
+
+
+
+
+

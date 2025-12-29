@@ -1,0 +1,25 @@
+import tkinter as tk 
+
+
+def button_play (appear, button):
+    button.pack_forget()
+    appear.pack(expend= True)
+
+def print_on_window ():
+
+
+    window = tk.Tk()
+    window.title("result")
+    window.geometry("200x200")
+    window.configure (bg = "lightblue")
+
+    appear = tk.Label(window, text = "clicado com sucesso", font = ("arial", 20), bg = "lightblue", fg = "blue")
+
+    but = tk.Button(window, text = "clik here", font = ("arial", 30), command = lambda: button_play(appear, but))
+    but.pack(pady = 50)
+
+
+    window.mainloop()
+
+print_on_window ()
+
